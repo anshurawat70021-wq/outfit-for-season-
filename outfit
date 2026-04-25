@@ -1,0 +1,72 @@
+outfit_app/
+ ├── app.py
+ ├── images
+import streamlit as st
+
+st.set_page_config(page_title="Aesthetic Outfit Generator", layout="wide")
+
+st.title("✨ Aesthetic Outfit Suggestions 👗")
+st.write("Choose a season and explore cute outfit ideas!")
+
+season = st.selectbox("Select Season 🌸", ["Summer ☀️", "Winter ❄️", "Monsoon 🌧️", "Autumn 🍂"])
+
+# Function to display images in grid
+def show_images(image_list):
+    cols = st.columns(3)
+    for i, img in enumerate(image_list):
+        with cols[i % 3]:
+            st.image(img, use_container_width=True)
+
+# SUMMER
+if season == "Summer ☀️":
+    st.header("☀️ Cute Summer Outfits")
+    summer_images = [
+        "images/summer1.jpg",
+        "images/summer2.jpg",
+        "images/summer3.jpg",
+        "images/summer4.jpg",
+        "images/summer5.jpg",
+        "images/summer6.jpg"
+    ]
+    show_images(summer_images)
+
+# WINTER
+elif season == "Winter ❄️":
+    st.header("❄️ Cozy Winter Outfits")
+    winter_images = [
+        "images/winter1.jpg",
+        "images/winter2.jpg",
+        "images/winter3.jpg",
+        "images/winter4.jpg",
+        "images/winter5.jpg",
+        "images/winter6.jpg"
+    ]
+    show_images(winter_images)
+
+# MONSOON
+elif season == "Monsoon 🌧️":
+    st.header("🌧️ Stylish Monsoon Outfits")
+    monsoon_images = [
+        "images/monsoon1.jpg",
+        "images/monsoon2.jpg",
+        "images/monsoon3.jpg",
+        "images/monsoon4.jpg",
+        "images/monsoon5.jpg",
+        "images/monsoon6.jpg"
+    ]
+    show_images(monsoon_images)
+
+# AUTUMN
+elif season == "Autumn 🍂":
+    st.header("🍂 Aesthetic Autumn Outfits")
+    autumn_images = [
+        "images/autumn1.jpg",
+        "images/autumn2.jpg",
+        "images/autumn3.jpg",
+        "images/autumn4.jpg",
+        "images/autumn5.jpg",
+        "images/autumn6.jpg"
+    ]
+    show_images(autumn_images)
+
+st.write("💖 Stay stylish and confident!")
